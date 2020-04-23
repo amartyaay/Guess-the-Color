@@ -1,5 +1,6 @@
 console.log("hi,console user");
-var color = generateRandomColor(6);
+var numSq = 6;
+var color = generateRandomColor(numSq);
 var h1 = document.querySelector("h1");
 
 var pickedColor = pickColor();
@@ -24,6 +25,7 @@ for (var i = 0; i < sq.length; i++) {
       changeSqColor();
       h1.style.background = pickedColor;
       console.log("correct");
+      resetButton.textContent = "Play Again??";
     } else {
       this.style.background = "#232323";
       msgDisplay.textContent = "Try Agaain";
@@ -60,11 +62,53 @@ function colorRandom() {
 var resetButton = document.querySelector("#reset");
 resetButton.addEventListener("click", function () {
   console.log("clicked reset");
-  color = generateRandomColor(6);
+  color = generateRandomColor(numSq);
   pickedColor = pickColor();
   colorDisplay.textContent = pickedColor;
   for (var i = 0; i < sq.length; i++) {
     //Intial color to sq
     sq[i].style.background = color[i];
   }
+  h1.style.background = "#232323";
+  resetButton.textContent = "New Colors";
+});
+
+var easyBtn = document.querySelector("#easy");
+var hardBtn = document.querySelector("#hard");
+
+easyBtn.addEventListener("click", function () {
+  console.log("clicked easy");
+  easyBtn.classList.add("selected");
+  hardBtn.classList.remove("selected");
+  numSq = 3;
+  color = generateRandomColor(numSq);
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+  for (var i = 0; i < sq.length; i++) {
+    //Intial color to sq
+    if (color[i]) {
+      sq[i].style.background = color[i];
+    } else {
+      sq[i].style.display = "None";
+    }
+  }
+  msgDisplay.textContent = "Play!!!";
+  h1.style.background = "#232323";
+});
+
+hardBtn.addEventListener("click", function () {
+  console.log("clicked hard");
+  hardBtn.classList.add("selected");
+  easyBtn.classList.remove("selected");
+  numSq = 6;
+  color = generateRandomColor(numSq);
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+  for (var i = 0; i < sq.length; i++) {
+    //Intial color to sq
+    sq[i].style.background = color[i];
+    sq[i].style.display = "block";
+  }
+  h1.style.background = "#232323";
+  msgDisplay.textContent = "Play!!!";
 });

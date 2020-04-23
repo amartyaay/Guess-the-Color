@@ -23,4 +23,8 @@ h1 {
   text-align: center;
   color: black;
   background-color: white;
+  align-items: center;
+}
+.selected {
+  background: blue;
 }
