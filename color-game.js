@@ -65,11 +65,12 @@ resetButton.addEventListener("click", function () {
   color = generateRandomColor(numSq);
   pickedColor = pickColor();
   colorDisplay.textContent = pickedColor;
+  msgDisplay.textContent = "Play!!!";
   for (var i = 0; i < sq.length; i++) {
     //Intial color to sq
     sq[i].style.background = color[i];
   }
-  h1.style.background = "#232323";
+  h1.style.background = "steelblue";
   resetButton.textContent = "New Colors";
 });
 
@@ -93,7 +94,7 @@ easyBtn.addEventListener("click", function () {
     }
   }
   msgDisplay.textContent = "Play!!!";
-  h1.style.background = "#232323";
+  h1.style.background = "steelblue";
 });
 
 hardBtn.addEventListener("click", function () {
@@ -109,6 +110,6 @@ hardBtn.addEventListener("click", function () {
     sq[i].style.background = color[i];
     sq[i].style.display = "block";
   }
-  h1.style.background = "#232323";
+  h1.style.background = "steelblue";
   msgDisplay.textContent = "Play!!!";
 });
