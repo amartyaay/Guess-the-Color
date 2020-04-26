@@ -2,6 +2,7 @@ console.log("hi,console user");
 var numSq = 6;
 var color = generateRandomColor(numSq);
 var h1 = document.querySelector("h1");
+var check = document.querySelector("#check");
 
 var pickedColor = pickColor();
 var msgDisplay = document.querySelector("#msg");
@@ -26,6 +27,19 @@ for (var i = 0; i < sq.length; i++) {
       h1.style.background = pickedColor;
       console.log("correct");
       resetButton.textContent = "Play Again??";
+      if (check.checked) {
+        console.log("checkbox is checked");
+        color = generateRandomColor(numSq);
+        pickedColor = pickColor();
+        colorDisplay.textContent = pickedColor;
+        msgDisplay.textContent = "Play!!!";
+        for (var i = 0; i < sq.length; i++) {
+          //Intial color to sq
+          sq[i].style.background = color[i];
+        }
+        h1.style.background = colorRandom();
+        resetButton.textContent = "New Colors";
+      }
     } else {
       this.style.background = "#232323";
       msgDisplay.textContent = "Try Agaain";
@@ -70,7 +84,7 @@ resetButton.addEventListener("click", function () {
     //Intial color to sq
     sq[i].style.background = color[i];
   }
-  h1.style.background = "steelblue";
+  h1.style.background = colorRandom();
   resetButton.textContent = "New Colors";
 });
 

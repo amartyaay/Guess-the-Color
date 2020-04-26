@@ -3,6 +3,7 @@
   <head>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Orbitron:wght@714&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="color-game.css" />
+    
     <title>color-game</title>
   </head>
   <body>
@@ -14,7 +15,13 @@
       <span id="msg">Play!!!</span>
       <button id="easy"">Easy</button>    
       <button id="hard" class="selected">Hard</button>
-    </div>
+      
+     <div id="play"><label class="switch">
+      <input type="checkbox" id="check">
+      <span class="slider round"></span>
+      
+    </label>       Play Continously</div>     
+      </div>
     <div id="container">
       <div class="square"></div>
       <div class="square"></div>
@@ -23,6 +30,6 @@
       <div class="square"></div>
       <div class="square"></div>
     </div>
-    <script src="color-game.js"></script>
+     <script type="text/javascript" src="color-game.js"></script>
   </body>
 </html>
