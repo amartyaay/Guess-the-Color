@@ -118,7 +118,7 @@ button:hover {
 }
 
 input:checked + .slider {
-  background-color: steelblue;
+  background-color: orange;
 }
 
 input:focus + .slider {
@@ -142,15 +142,17 @@ input:checked + .slider:before {
 #play {
   padding-left: 15px;
   /* float: left; */
-  display: inline;
-
+  /* display: inline; */
+  padding-top: 22%;
+  padding-left: 43.5%;
+  text-align: center
   margin: 0px;
   border: none;
   background: none;
   text-transform: uppercase;
   height: 100%;
   font-weight: 700;
-  color: steelblue;
+  color: white;
   letter-spacing: 1px;
   font-size: inherit;
   outline: none;
